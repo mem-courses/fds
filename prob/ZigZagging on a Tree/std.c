@@ -32,7 +32,7 @@ void dfs(int u, int depth) {
 
 int main() {
 #ifdef memset0
-  freopen("data1.in", "r", stdin);
+  freopen("data11.in", "r", stdin);
 #endif
 
   scanf("%d", &n);
@@ -53,9 +53,9 @@ int main() {
     r = l;
     while (r + 1 <= tot && q[r + 1].depth == q[r].depth) ++r;
     if (q[l].depth & 1) {
-      for (int i = r; i >= l; i--) printf("%d%c", q[i].node, " \n"[i == n]);
+      for (int i = r; i >= l; i--) printf("%d%c", q[i].node, " \n"[i == l && r == tot]);
     } else {
-      for (int i = l; i <= r; i++) printf("%d%c", q[i].node, " \n"[i == n]);
+      for (int i = l; i <= r; i++) printf("%d%c", q[i].node, " \n"[i == tot]);
     }
   }
 }

@@ -56,11 +56,11 @@ void gen(int test, int n) {
   sort(node.begin(), node.end());
   for (int l = 0, r; l < node.size(); l = r + 1) {
     r = l;
-    while (r + 1 < node.size() && get<1>(node[r + 1]) == get<1>(node[r])) ++r;
-    if (get<1>(node[l]) & 1) {
-      for (int i = r; i >= l; i--) cout << get<2>(node[i]) << " \n"[i + 1 == node.size()];
+    while (r + 1 < node.size() && get<0>(node[r + 1]) == get<0>(node[r])) ++r;
+    if (get<0>(node[l]) & 1) {
+      for (int i = r; i >= l; i--) cout << get<2>(node[i]) << " \n"[i == l && r + 1 == node.size()];
     } else {
-      for (int i = l; i <= r; i++) cout << get<2>(node[i]) << " \n"[i + 1 == node.size()];
+      for (int i = l; i <= r; i++) cout << get<2>(node[i]) << " \n"[i == r && r + 1 == node.size()];
     }
   }
 }
